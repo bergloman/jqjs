@@ -13,10 +13,11 @@ It performs the following:
 ## Syntax
 
 ```txt
-jqj [-d <delimiter>] <queries>
+jqjs [-d <delimiter>] <queries>
 ```
 
-`queries` - a list of queries, delimited by `|`
+- `delimiter` - delimiter that is used for output, default is `","`
+- `queries` - a list of queries, delimited by `|`, e.g. `"query1|query2"`
 
 ## Example
 
@@ -32,7 +33,7 @@ Consider the following input file, containing a single JSON object per line:
 Running `jqjs` tool with the following parameters
 
 ```bash
-cat input_file.txt | node index.js -d ";" "b|a|a"
+cat input_file.txt | jqjs -d ";" "b|a|a"
 ```
 
 will produce the following result:
